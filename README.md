@@ -1,7 +1,40 @@
-# Calibration-Scheme-of-the-Temperature-Sensor
-This respository takes a certain temperature sensor as the research object, and uses statistical methods to explore the calibration scheme of the temperature sensor with nonlinear relationship between input and output. Since there are many point-selecting schemes, the time complexity of the exhaustive method is too high, so the heuristic search scheme is adopted. Genetic algorithm is a heuristic search method that imitates the natural genetic mechanism. It has high efficiency in solving such problems and can obtain an approximate solution of an optimal solution. In this paper, the genetic algorithm is used as the optimization algorithm, and the simulated annealing algorithm is used as an extension. The cubic spline interpolation method is used to find the optimal solution.
+# Calibration Scheme of the Temperature Sensor
 
--- How to use this respository?
-   1) Use the Genetic Algorithm. Set numIndividuals = 200，numGeneration = 20，mutationRate = 0.1. You can get a solution cost less than 400 dollars with a possibility of 0.6 in 80 seconds. You may get a relatively optimal solution picking 5 points cost about 360 dollars in this way.
-   2) Use the Annealing Simulation Algorithm. And specify picking 6 points. You can get a solution cost around 380$ in less than 5 dollars. But you cannot get the optimal solution.
-   3) First use the Genetic Algorithm and set the parameters as above. Than use the solution as the initial answer in the Annelaing Simulation Algorithm. It is recommended. 
+This repository explores the calibration scheme of a temperature sensor with a nonlinear relationship between input and output. By leveraging statistical methods, we aim to optimize the calibration process using heuristic search algorithms.
+
+## Overview
+
+The calibration of temperature sensors can be complex due to the nonlinear relationship between input and output. Traditional exhaustive methods are time-consuming and computationally expensive. This project adopts heuristic search methods, specifically genetic algorithms and simulated annealing, to find optimal calibration points efficiently.
+
+## Algorithms Used
+
+### Genetic Algorithm
+- **Description**: A heuristic search method that mimics natural genetic mechanisms.
+- **Parameters**:
+  - `numIndividuals = 200`
+  - `numGeneration = 20`
+  - `mutationRate = 0.1`
+- **Performance**: Achieves a solution costing less than $400 with a 60% probability in 80 seconds.
+
+### Simulated Annealing Algorithm
+- **Description**: An optimization technique used as an extension to the genetic algorithm.
+- **Performance**: Provides a solution costing around $380 when picking 6 points, though it may not always find the optimal solution.
+
+## Recommended Approach
+
+1. **Initial Calibration**: Use the Genetic Algorithm with the specified parameters.
+2. **Optimization**: Use the solution from the Genetic Algorithm as the initial input for the Simulated Annealing Algorithm to refine the results.
+
+## How to Use
+
+1. **Genetic Algorithm**:
+   - Set the parameters as described above.
+   - Run the algorithm to get an initial solution.
+
+2. **Simulated Annealing**:
+   - Use the initial solution from the Genetic Algorithm.
+   - Run the algorithm to further optimize the calibration points.
+
+## License
+
+This project is licensed under the Apache-2.0 License.
